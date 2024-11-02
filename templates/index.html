@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard Hogwarts{% endblock %}
+
+{% block content %}
+<h2>Prever Nota Final</h2>
+<form id="predict-form">
+    <label>Defesa Contra as Artes das Trevas: <input type="number" id="defesa" required></label>
+    <label>Poções: <input type="number" id="pocoes" required></label>
+    <label>Transfiguração: <input type="number" id="transfiguracao" required></label>
+    <button type="button" onclick="makePrediction()">Prever Nota Final</button>
+</form>
+<p id="prediction-result"></p>
+
+<script src="{{ url_for('static', filename='scripts.js') }}"></script>
+{% endblock %}
