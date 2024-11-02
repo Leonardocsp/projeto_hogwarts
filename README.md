@@ -6,8 +6,19 @@ Este é um projeto desenvolvido em Python utilizando o framework Flask, que simu
 
 A estrutura do projeto é a seguinte:
 
-/projeto_hogwarts ├── app.py ├── models │ └── regressor.py ├── templates │ ├── base.html │ ├── index.html │ └── graficos.html └── static └── styles.css
-
+```
+/projeto_hogwarts
+├── app.py
+├── models
+│   └── regressor.py
+├── templates
+│   ├── base.html
+│   ├── index.html
+│   └── graficos.html
+└── static
+    ├── styles.css
+    └── scripts.js
+```
 
 ### Descrição dos Arquivos
 
@@ -30,38 +41,47 @@ Para executar o projeto, siga os passos abaixo:
    ```bash
    git clone https://github.com/Leonardocsp/projeto_hogwarts.git
    cd projeto_hogwarts
-Instale as dependências: É recomendado criar um ambiente virtual. Você pode fazer isso com o venv:
+   ```
 
-python -m venv venv
-source venv/bin/activate  # Linux/Mac
-venv\Scripts\activate     # Windows
-Em seguida, instale as bibliotecas necessárias:
+2. **Instale as dependências:** É recomendado criar um ambiente virtual. Você pode fazer isso com o venv:
 
-pip install Flask pandas scikit-learn plotly
-Execução
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # Linux/Mac
+   venv\Scripts\activate     # Windows
+   ```
+
+   Em seguida, instale as bibliotecas necessárias:
+
+   ```bash
+   pip install Flask pandas scikit-learn plotly
+   ```
+
+## Execução
+
 Para iniciar o servidor Flask, execute o seguinte comando no terminal:
 
+```bash
 python app.py
+```
+
 O aplicativo estará disponível em http://127.0.0.1:5000/.
 
-Funcionalidades
-Previsão de Notas Finais: Os usuários podem inserir suas notas em "Defesa Contra as Artes das Trevas", "Poções" e "Transfiguração" para prever sua nota final.
-Gráficos Interativos: Visualize as médias das notas por casa em gráficos de barras interativos.
-Contribuição
+## Funcionalidades
+
+- **Previsão de Notas Finais:** Os usuários podem inserir suas notas em "Defesa Contra as Artes das Trevas", "Poções" e "Transfiguração" para prever sua nota final.
+- **Gráficos Interativos:** Visualize as médias das notas por casa em gráficos de barras interativos.
+
+## Contribuição
+
 Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests.
 
-Licença
+## Licença
+
 Este projeto é de código aberto e pode ser usado livremente. Por favor, verifique o arquivo LICENSE para mais detalhes.
 
 ### Dicas para Uso
 
-1. **Adapte o README**: Você pode personalizar as seções conforme a necessidade do seu projeto, adicionando informações relevantes como instruções específicas para o ambiente de desenvolvimento ou detalhes sobre as dependências.
-2. **Exemplos de Uso**: Considere adicionar uma seção de exemplos de uso, mostrando como interagir com a interface ou exemplos de dados de entrada e saída para a previsão.
-3. **Screenshots**: Se você tiver capturas de tela do aplicativo em execução, é uma boa prática incluí-las para dar uma visão visual do que os usuários podem esperar.
-
-Esse modelo serve como um bom ponto de partida para documentar seu projeto. Se precisar de mais ajustes ou adicionar mais seções, é só avisar!
-
-
-
-
-
+1. **Adapte o README:** Você pode personalizar as seções conforme a necessidade do seu projeto, adicionando informações relevantes como instruções específicas para o ambiente de desenvolvimento ou detalhes sobre as dependências.
+2. **Exemplos de Uso:** Considere adicionar uma seção de exemplos de uso, mostrando como interagir com a interface ou exemplos de dados de entrada e saída para a previsão.
+3. **Screenshots:** Se você tiver capturas de tela do aplicativo em execução, é uma boa prática incluí-las para dar uma visão visual do que os usuários podem esperar.
