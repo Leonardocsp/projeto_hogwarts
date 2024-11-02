@@ -20,6 +20,7 @@ header {
     padding: 15px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    position: relative; /* Para usar position:absolute no nav */
 }
 
 header h1 {
@@ -27,8 +28,10 @@ header h1 {
     margin: 0;
 }
 
+/* Navegação */
 nav {
     margin-top: 10px;
+    position: relative; /* Para posicionar o nome do usuário corretamente */
 }
 
 nav a {
@@ -39,8 +42,31 @@ nav a {
     transition: color 0.3s ease;
 }
 
+/* Estilo do botão de logout */
+.logout-button {
+    background-color: red; /* Cor de fundo vermelha */
+    padding: 10px 15px; /* Ajustando o padding */
+    border-radius: 4px; /* Arredondando as bordas */
+    margin-left: 20px; /* Margem à esquerda para espaçar do texto */
+    font-weight: bold; /* Para destaque */
+}
+
+/* Alterar a cor do botão de logout ao passar o mouse */
+.logout-button:hover {
+    background-color: darkred; /* Cor mais escura ao passar o mouse */
+}
+
 nav a:hover {
     color: #ddd;
+}
+
+/* Nome do usuário logado */
+.user-name {
+    position: absolute; /* Posiciona o nome do usuário */
+    right: 20px; /* Distância do lado direito */
+    top: 15px; /* Distância do topo do cabeçalho */
+    color: #fff; /* Cor do texto */
+    font-weight: bold; /* Para destaque */
 }
 
 /* Títulos */
