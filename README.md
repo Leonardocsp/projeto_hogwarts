@@ -86,8 +86,3 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar
 
 Este projeto é de código aberto e pode ser usado livremente. Por favor, verifique o arquivo LICENSE para mais detalhes.
 
-### Dicas para Uso
-
-1. **Adapte o README:** Você pode personalizar as seções conforme a necessidade do seu projeto, adicionando informações relevantes como instruções específicas para o ambiente de desenvolvimento ou detalhes sobre as dependências.
-2. **Exemplos de Uso:** Considere adicionar uma seção de exemplos de uso, mostrando como interagir com a interface ou exemplos de dados de entrada e saída para a previsão.
-3. **Screenshots:** Se você tiver capturas de tela do aplicativo em execução, é uma boa prática incluí-las para dar uma visão visual do que os usuários podem esperar.
