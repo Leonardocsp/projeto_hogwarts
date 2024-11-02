@@ -10,11 +10,15 @@ A estrutura do projeto é a seguinte:
 /projeto_hogwarts
 ├── app.py
 ├── models
-│   └── regressor.py
+│   ├── regressor.py
+│   └── user.py
+├── views.py
 ├── templates
 │   ├── base.html
 │   ├── index.html
-│   └── graficos.html
+│   ├── graficos.html
+│   ├── eda.html
+│   └── comparar.html
 └── static
     ├── styles.css
     └── scripts.js
@@ -22,17 +26,19 @@ A estrutura do projeto é a seguinte:
 
 ### Descrição dos Arquivos
 
-- `app.py`: Arquivo principal onde o aplicativo Flask é configurado e as rotas são registradas.
-- `models/regressor.py`: Contém o modelo de regressão linear e os dados fictícios dos alunos.
-- `views.py`: Define as rotas que utilizam o Blueprint para gerenciar gráficos e previsões.
-- `templates/`: Contém os templates HTML utilizados para renderizar as páginas.
-  - `base.html`: Template base com cabeçalho e rodapé reutilizáveis.
-  - `index.html`: Página inicial onde os usuários podem inserir dados para previsão.
-  - `graficos.html`: Exibe os gráficos das médias de notas por casa.
-- `static/`: Contém arquivos estáticos como CSS e JavaScript.
-  - `styles.css`: Estilos para a interface do usuário.
-  - `scripts.js`: Script para gerenciar a lógica de previsão.
-
+app.py: Arquivo principal onde o aplicativo Flask é configurado e as rotas são registradas.
+models/regressor.py: Contém o modelo de regressão linear e os dados fictícios dos alunos.
+models/user.py: Define o modelo de usuário para o sistema de login.
+views.py: Define as rotas que utilizam o Blueprint para gerenciar gráficos, previsões e análise exploratória de dados.
+templates/: Contém os templates HTML utilizados para renderizar as páginas.
+base.html: Template base com cabeçalho e rodapé reutilizáveis.
+index.html: Página inicial onde os usuários podem inserir dados para previsão.
+graficos.html: Exibe os gráficos das médias de notas por casa.
+eda.html: Apresenta estatísticas descritivas e gráficos de distribuição de notas.
+comparar.html: Permite comparar as notas de diferentes alunos.
+static/: Contém arquivos estáticos como CSS e JavaScript.
+styles.css: Estilos para a interface do usuário.
+scripts.js: Script para gerenciar a lógica de previsão.
 ## Instalação
 
 Para executar o projeto, siga os passos abaixo:
