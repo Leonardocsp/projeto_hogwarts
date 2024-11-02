@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Comparação entre Alunos{% endblock %}
+
+{% block content %}
+<h2>Comparar Alunos</h2>
+<form method="POST">
+    <label for="alunos">Escolha os alunos:</label>
+    <select name="alunos" multiple required>
+        {% for aluno in alunos %}
+        <option value="{{ aluno }}">{{ aluno }}</option>
+        {% endfor %}
+    </select>
+    <button type="submit">Comparar</button>
+</form>
+
+{% if graph_html %}
+<div class="graph-container">{{ graph_html|safe }}</div>
+{% endif %}
+{% endblock %}
