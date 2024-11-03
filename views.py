@@ -19,13 +19,25 @@ def graficos():
 
 @bp.route('/predict', methods=['POST'])
 def predict():
-    try:
-        dados = request.json
-        input_data = [[dados['DefesaContraArtes'], dados['Pocoes'], dados['Transfiguracao']]]
-        predicao = model.predict(input_data)[0]
-        return jsonify({'predicao': predicao})
-    except (KeyError, TypeError, ValueError):
-        return jsonify({'error': 'Dados inválidos, verifique as entradas.'}), 400
+    data = request.get_json()  # Retrieve JSON data from POST request
+
+    # Extract the input features
+    defesa = data.get("DefesaContraArtes")
+    pocoes = data.get("Pocoes")
+    transfiguracao = data.get("Transfiguracao")
+
+    # Create DataFrame for model input
+    novas_notas = pd.DataFrame({
+        "DefesaContraArtes": [defesa],
+        "Pocoes": [pocoes],
+        "Transfiguracao": [transfiguracao]
+    })
+
+    # Make prediction
+    predicao = model.predict(novas_notas)
+    
+    # Return prediction result
+    return jsonify({"predicao": float(predicao[0])})
 
 @bp.route('/eda')
 @login_required
