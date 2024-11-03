@@ -9,12 +9,11 @@
     <header>
         <h1>Bem-vindo ao Dashboard de Hogwarts</h1>
         <nav>
-            <a href="/">Home</a> | 
+            <a href="/">Comparar Alunos</a> | 
             <a href="/graficos">Ver Gráficos de Notas por Casa</a> |
             <a href="/eda">Análise Exploratória de Dados</a> | 
             <a href="/export">Exportar Dados</a> |
             <a href="/comparar">Comparar Alunos</a> |
-            <!-- Nome do usuário logado -->
             {% if current_user.is_authenticated %}
                 <span class="user-name">Olá, {{ current_user.name }}!</span>
             {% endif %}
