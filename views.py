@@ -46,10 +46,35 @@ def eda():
     stats = data.describe().to_dict()
     
     # Gráfico de distribuição de notas
-    fig = px.histogram(data, x='NotaFinal', title='Distribuição das Notas Finais')
-    histogram_html = fig.to_html(full_html=False)
+    fig_hist = px.histogram(data, x='NotaFinal', title='Distribuição das Notas Finais')
 
-    return render_template('eda.html', stats=stats, histogram_html=histogram_html)
+    # Boxplot para detectar outliers
+    fig_box = px.box(data, y='NotaFinal', title='Boxplot das Notas Finais')
+    
+    # Gráfico de dispersão entre duas variáveis (exemplo: Defesa Contra Artes vs. Transfiguração)
+    fig_scatter = px.scatter(data, x='DefesaContraArtes', y='Transfiguracao', 
+                             title='Correlação entre Defesa Contra Artes e Transfiguração', 
+                             color='Casa')
+
+    # Filtrando apenas as colunas numéricas para calcular a correlação
+    numeric_data = data.select_dtypes(include=['number'])
+
+    # Estatísticas de correlação
+    correlation_matrix = numeric_data.corr()
+
+    # Convertendo a matriz de correlação para um formato amigável para exibição
+    corr_html = correlation_matrix.to_html(classes='table table-striped')
+
+    # Gerando gráficos
+    histogram_html = fig_hist.to_html(full_html=False)
+    boxplot_html = fig_box.to_html(full_html=False)
+    scatter_html = fig_scatter.to_html(full_html=False)
+
+    return render_template('eda.html', stats=stats, 
+                           histogram_html=histogram_html, 
+                           boxplot_html=boxplot_html, 
+                           scatter_html=scatter_html, 
+                           corr_html=corr_html)
 
 @bp.route('/export')
 @login_required

@@ -4,9 +4,30 @@
 
 {% block content %}
 <h2>Análise Exploratória de Dados</h2>
+
 <div>
     <h3>Estatísticas Descritivas</h3>
     <pre>{{ stats|tojson(indent=2) }}</pre>
 </div>
-<div class="graph-container">{{ histogram_html|safe }}</div>
+
+<div class="graph-container">
+    <h3>Distribuição das Notas Finais</h3>
+    <div>{{ histogram_html|safe }}</div>
+</div>
+
+<div class="graph-container">
+    <h3>Boxplot das Notas Finais</h3>
+    <div>{{ boxplot_html|safe }}</div>
+</div>
+
+<div class="graph-container">
+    <h3>Correlação entre Defesa Contra Artes e Transfiguração</h3>
+    <div>{{ scatter_html|safe }}</div>
+</div>
+
+<div>
+    <h3>Matriz de Correlação entre as Variáveis</h3>
+    <div>{{ corr_html|safe }}</div>
+</div>
+
 {% endblock %}
