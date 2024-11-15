@@ -4,121 +4,126 @@
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    <style>/* Estilos Gerais */
+    <style>
       body {
-          font-family: 'Arial', sans-serif;
-          background-color: #f4f4f9;
-          color: #333;
+          font-family: 'Georgia', serif;
+          background-image: url('{{ url_for("static", filename="imagens/R.png") }}');
+          background-size: cover;
+          background-position: center;
+          color: #d3c89b;
           margin: 0;
           padding: 0;
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          height: 100vh; /* Centra o conteúdo verticalmente */
+          height: 100vh;
       }
-      
-      /* Cabeçalho */
+
       header {
-          width: 100%;
+          width: 100vw;
           text-align: center;
-          background-color: #4a4a8a;
+          background-color: rgba(0, 0, 0, 0.7);
           color: #fff;
-          padding: 15px 0;
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          padding: 10px 0;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+          box-sizing: border-box;
       }
-      
-      /* Estilos do Contêiner de Login */
+
       .login-container {
-          background: white;
+          background: rgba(0, 0, 0, 0.8);
           border-radius: 8px;
           padding: 40px;
           max-width: 400px;
           width: 90%;
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
           text-align: center;
+          margin-bottom : 230px;
       }
-      
+
       h1 {
-          font-size: 1.8rem;
+          font-size: 2rem;
           margin-bottom: 20px;
+          color : #f3da3f;
+          font-family: 'Georgia', serif;
       }
-      
+
       form {
           display: flex;
           flex-direction: column;
       }
-      
-      /* Estilos do Formulário */
+
       label {
           font-weight: bold;
           margin-bottom: 5px;
+          color: #eaeaea;
       }
-      
-      input[type="email"], 
+
+      input[type="email"],
       input[type="password"] {
           padding: 10px;
-          border: 1px solid #ddd;
+          border: 1px solid #4a4a8a;
           border-radius: 4px;
           margin-bottom: 15px;
           font-size: 1rem;
           transition: border-color 0.3s ease;
+          background-color: #333;
+          color: #d3c89b;
       }
-      
-      input[type="email"]:focus, 
+
+      input[type="email"]:focus,
       input[type="password"]:focus {
-          border-color: #4a4a8a;
+          border-color: #b59b58;
           outline: none;
       }
-      
+
       button {
           padding: 12px 20px;
-          background-color: #4a4a8a;
-          color: white;
+          background-color: #6a4a30;
+          color: #d3c89b;
           border: none;
           border-radius: 4px;
           cursor: pointer;
           font-size: 1rem;
           transition: background-color 0.3s ease, transform 0.2s ease;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
       }
-      
+
       button:hover {
-          background-color: #333;
+          background-color: #533621;
           transform: scale(1.05);
       }
-      
-      /* Link de Retorno */
+
       a {
           text-decoration: none;
-          color: #4a4a8a;
+          color: #d3c89b;
           font-weight: bold;
           margin-top: 15px;
           transition: color 0.3s ease;
       }
-      
+
       a:hover {
-          color: #333;
+          color: #b59b58;
       }
-      
-      /* Feedback de Erros */
+
       ul {
           list-style: none;
           padding: 0;
           margin-top: 15px;
       }
-      
+
       li.success {
-          color: green;
+          color: #4caf50;
       }
-      
+
       li.danger {
-          color: red;
+          color: #ff4c4c;
       }
-      </style>
+    </style>
 </head>
 <body>
     <header>
-        <h1>Login</h1>
+        <h1>Bem-vindo ao Mundo Mágico</h1>
     </header>
     <main>
         <div class="login-container">
