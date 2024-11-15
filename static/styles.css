@@ -1,176 +1,172 @@
-/* Estilos Gerais */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Raleway:wght@300;400;700&display=swap');
+
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
+    font-family: 'Cinzel', serif;
+    background-color: #1d1d1d; 
+    color: #f4e9c9;
     margin: 0;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    line-height: 1.6;
-    min-height: 100vh; /* Para garantir que o conteúdo ocupe toda a altura da tela */
+    line-height: 1.8;
+    min-height: 100vh; 
+    background-image: url('imagens/sky.jpg');
+    background-size: cover;
 }
 
-/* Cabeçalho */
 header {
     width: 100%;
     text-align: center;
-    background-color: #4a4a8a;
-    color: #fff;
+    background-color: #2b292d;
+    color: #f4e9c9;
     padding: 15px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     margin-bottom: 20px;
-    position: relative; /* Para usar position:absolute no nav */
+    border-bottom: 3px solid #d4af37;
+    position: relative;
 }
 
 header h1 {
     font-size: 2rem;
     margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px #000;
 }
 
-/* Navegação */
 nav {
     margin-top: 10px;
-    position: relative; /* Para posicionar o nome do usuário corretamente */
+    position: relative;
 }
 
 nav a {
-    color: #fff;
+    color: #d4af37;
     margin: 0 15px;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
-    font-size: 1rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    font-family: 'Raleway', sans-serif;
 }
 
 nav a:hover {
-    color: #ddd;
+    color: #fff; 
 }
 
-/* Estilo do botão de logout */
 .logout-button {
-    background-color: red; /* Cor de fundo vermelha */
-    padding: 10px 15px; /* Ajustando o padding */
-    border-radius: 4px; /* Arredondando as bordas */
-    margin-left: 20px; /* Margem à esquerda para espaçar do texto */
-    font-weight: bold; /* Para destaque */
+    background-color: #7f0909;
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin-left: 20px;
+    font-weight: bold;
+    color: #f4e9c9;
+    border: 1px solid #d4af37;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .logout-button:hover {
-    background-color: darkred; /* Cor mais escura ao passar o mouse */
+    background-color: #5a0707;
+    transform: scale(1.1);
 }
 
-/* Nome do usuário logado */
 .user-name {
-    position: absolute; /* Posiciona o nome do usuário */
-    right: 20px; /* Distância do lado direito */
-    top: 15px; /* Distância do topo do cabeçalho */
-    color: #fff; /* Cor do texto */
-    font-weight: bold; /* Para destaque */
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    color: #d4af37;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Raleway', sans-serif;
 }
 
-/* Títulos */
 h1, h2 {
-    color: #4a4a8a;
+    color: #d4af37;
     margin-bottom: 15px;
-    font-size: 1.8rem;
+    text-shadow: 1px 1px #000;
 }
 
-/* Containers */
 .container, .graph-container, form {
-    background: white;
-    border: 1px solid #ddd;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #d4af37;
     border-radius: 8px;
     padding: 20px;
     max-width: 800px;
     width: 90%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.graph-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-/* Gráficos - Melhoria na responsividade */
 .graph-container iframe {
-    width: 100%;
-    max-width: 700px;
-    height: 400px;
-    border: none;
+    border: 2px solid #d4af37;
     border-radius: 8px;
-    box-sizing: border-box; /* Evita que o padding e a borda interfiram no dimensionamento */
 }
 
-/* Formulário */
 form label {
     font-weight: bold;
-    color: #333;
+    color: #f4e9c9;
     margin-bottom: 8px;
 }
 
 input[type="number"] {
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid #d4af37;
     border-radius: 4px;
     width: 100%;
     font-size: 1rem;
     margin-bottom: 15px;
     box-sizing: border-box;
     transition: border-color 0.3s ease;
+    background: #1d1d1d;
+    color: #f4e9c9;
 }
 
 input[type="number"]:focus {
-    border-color: #4a4a8a;
+    border-color: #d4af37;
     outline: none;
 }
 
 button {
     padding: 12px 20px;
-    background-color: #4a4a8a;
-    color: white;
-    border: none;
+    background-color: #2b292d;
+    color: #d4af37;
+    border: 1px solid #d4af37;
     border-radius: 4px;
     cursor: pointer;
     font-size: 1rem;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    font-family: 'Raleway', sans-serif;
 }
 
 button:hover {
-    background-color: #333;
-    transform: scale(1.05);
+    background-color: #d4af37;
+    color: #1d1d1d;
+    transform: scale(1.1);
 }
 
-/* Feedback de Previsão */
 #prediction-result {
     margin-top: 15px;
     font-weight: bold;
-    color: #333;
+    color: #f4e9c9;
     text-align: center;
 }
 
-/* Link de Retorno */
 a {
     text-decoration: none;
-    color: #4a4a8a;
+    color: #d4af37;
     font-weight: bold;
     margin-top: 15px;
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #333;
+    color: #fff;
 }
 
-/* Estilo de tabela de correlação */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -178,7 +174,7 @@ table {
 }
 
 table, th, td {
-    border: 1px solid #ddd;
+    border: 1px solid #d4af37;
 }
 
 th, td {
@@ -187,36 +183,35 @@ th, td {
 }
 
 th {
-    background-color: #4a4a8a;
-    color: white;
-    font-weight: bold;
+    background-color: #2b292d;
+    color: #d4af37;
 }
 
 td {
-    background-color: #fafafa;
+    background-color: #1d1d1d;
+    color: #f4e9c9;
 }
 
 tr:nth-child(even) td {
-    background-color: #f4f4f9;
+    background-color: #2b292d;
 }
 
 tr:hover td {
-    background-color: #eaeaea;
+    background-color: #7f0909;
+    color: #fff;
 }
 
-/* Responsividade */
 @media (max-width: 600px) {
     header h1 {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 
     nav a {
-        margin: 0 5px;
         font-size: 0.9rem;
     }
 
     h1, h2 {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
     }
 
     .graph-container iframe {
@@ -228,3 +223,19 @@ tr:hover td {
     }
 }
 
+.graficos-page {
+    background-image: url('imagens/hg.jpg');
+    background-size: cover; /* Para cobrir toda a tela */
+    background-repeat: no-repeat; /* Evita repetição */
+    background-position: center; /* Centraliza a imagem */
+    min-height: 100vh; /* Garante que ocupa toda a altura da janela */
+    color: #f4e9c9; /* Ajusta a cor do texto para combinar com o fundo */
+}
+
+.eda-page{
+    background-image: url('https://www.transparenttextures.com/patterns/aged-wall.png');
+}
+
+.comparar-page{
+    background-image: url('imagens/houses.jpg');
+}
