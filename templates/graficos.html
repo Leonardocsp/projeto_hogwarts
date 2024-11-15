@@ -2,6 +2,8 @@
 
 {% block title %}Gráficos - Hogwarts{% endblock %}
 
+{% block body_class %}graficos-page{% endblock %}
+
 {% block content %}
 <h2>Gráficos de Notas por Casa</h2>
 <div class="graph-container">{{ graph_html|safe }}</div>
