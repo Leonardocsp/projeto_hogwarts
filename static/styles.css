@@ -10,9 +10,8 @@ body {
     flex-direction: column;
     align-items: center;
     line-height: 1.8;
-    min-height: 100vh; 
+    min-height: 100v h;
     background-image: url('imagens/sky.jpg');
-    background-size: cover;
 }
 
 header {
@@ -240,6 +239,13 @@ tr:hover td {
 
 .comparar-page{
     background-image: url('imagens/houses.jpg');
+    background-size: cover;
+}
+
+.quadribol-page{
+    background-image: url('imagens/hou.png');
+    background-size: contain;
+    
 }
 
 .quadro {
