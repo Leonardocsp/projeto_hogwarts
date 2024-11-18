@@ -14,11 +14,14 @@
             <a href="/eda">Análise Exploratória de Dados</a> | 
             <a href="/export">Exportar Dados</a> |
             <a href="/comparar">Comparar Alunos</a> |
-            {% if current_user.is_authenticated %}
-                <span class="user-name">Olá, {{ current_user.name }}!</span>
-            {% endif %}
+            <a href="/quadribol">Quadribol</a> 
             <a href="/logout" class="logout-button">Logout</a>
         </nav>
+        {% if current_user.is_authenticated %}
+        <div class="user-info">
+            <span class="user-name">Olá, {{ current_user.name }}!</span>
+        </div>
+        {% endif %}
     </header>
     <main>
         {% block content %}{% endblock %}

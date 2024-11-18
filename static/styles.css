@@ -87,6 +87,8 @@ h1, h2 {
     text-shadow: 1px 1px #000;
 }
 
+
+
 .container, .graph-container, form {
     background: rgba(0, 0, 0, 0.8);
     border: 1px solid #d4af37;
@@ -225,11 +227,11 @@ tr:hover td {
 
 .graficos-page {
     background-image: url('imagens/hg.jpg');
-    background-size: cover; /* Para cobrir toda a tela */
-    background-repeat: no-repeat; /* Evita repetição */
-    background-position: center; /* Centraliza a imagem */
-    min-height: 100vh; /* Garante que ocupa toda a altura da janela */
-    color: #f4e9c9; /* Ajusta a cor do texto para combinar com o fundo */
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center; 
+    min-height: 100vh; 
+    color: #f4e9c9; 
 }
 
 .eda-page{
@@ -239,3 +241,27 @@ tr:hover td {
 .comparar-page{
     background-image: url('imagens/houses.jpg');
 }
+
+.quadro {
+    background: rgba(0, 0, 0, 0.8); 
+    border: 1px solid #d4af37; 
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 800px;
+    width: 90%; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8); 
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quadro h3 {
+    color: #f4e9c9; 
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Cinzel', serif;
+}
+
+

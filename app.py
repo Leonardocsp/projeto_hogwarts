@@ -2,7 +2,7 @@ from flask import Flask, render_template, redirect, url_for, flash, request
 from flask_login import LoginManager, login_user, login_required, logout_user
 from werkzeug.security import generate_password_hash, check_password_hash
 from models.user import db, User
-from views import bp as views_bp  # Importando o blueprint de views
+from views import bp as views_bp 
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'sua_chave_secreta'
@@ -20,11 +20,10 @@ def load_user(user_id):
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
-        name = request.form.get('name')  # Usar get para evitar KeyError
+        name = request.form.get('name') 
         email = request.form.get('email')
         password = request.form.get('password')
 
-        # Crie um novo usuário e adicione o hash da senha
         new_user = User(name=name, email=email, password=generate_password_hash(password))
         db.session.add(new_user)
         db.session.commit()
@@ -35,10 +34,10 @@ def register():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        email = request.form.get('email')  # Mudado para obter o e-mail
+        email = request.form.get('email')  
         password = request.form.get('password')
         
-        user = User.query.filter_by(email=email).first()  # Obtenha o usuário pelo e-mail
+        user = User.query.filter_by(email=email).first()  
 
         if user and check_password_hash(user.password, password):
             login_user(user)
@@ -59,7 +58,6 @@ def logout():
 def index():
     return render_template('index.html')
 
-# Registre o blueprint no contexto do aplicativo
 app.register_blueprint(views_bp)
 
 if __name__ == '__main__':

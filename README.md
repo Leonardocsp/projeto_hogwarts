@@ -6,23 +6,8 @@ Este é um projeto desenvolvido em Python utilizando o framework Flask, que simu
 
 A estrutura do projeto é a seguinte:
 
-```
-/projeto_hogwarts
-├── app.py
-├── models
-│   ├── regressor.py
-│   └── user.py
-├── views.py
-├── templates
-│   ├── base.html
-│   ├── index.html
-│   ├── graficos.html
-│   ├── eda.html
-│   └── comparar.html
-└── static
-    ├── styles.css
-    └── scripts.js
-```
+/projeto_hogwarts ├── app.py ├── models │ ├── regressor.py │ └── user.py ├── views.py ├── templates │ ├── base.html │ ├── index.html │ ├── graficos.html │ ├── eda.html │ ├── comparar.html │ └── quadribol.html # Nova página para estatísticas de quadribol └── static ├── styles.css └── scripts.js
+
 
 ### Descrição dos Arquivos
 
@@ -36,6 +21,7 @@ A estrutura do projeto é a seguinte:
   - **graficos.html**: Exibe os gráficos das médias de notas por casa.
   - **eda.html**: Apresenta estatísticas descritivas e gráficos de distribuição de notas.
   - **comparar.html**: Permite comparar as notas de diferentes alunos.
+  - **quadribol.html**: Exibe estatísticas detalhadas sobre o campeonato de Quadribol, com gráficos interativos sobre desempenho de jogadores, vitórias por time e pontuação total por casa.
 - **static/**: Contém arquivos estáticos como CSS e JavaScript.
   - **styles.css**: Estilos para a interface do usuário.
   - **scripts.js**: Script para gerenciar a lógica de previsão.
@@ -45,56 +31,43 @@ A estrutura do projeto é a seguinte:
 Para executar o projeto, siga os passos abaixo:
 
 1. **Clone o repositório:**
-   ```bash
    git clone https://github.com/Leonardocsp/projeto_hogwarts.git
    cd projeto_hogwarts
-   ```
+Crie e ative um ambiente virtual (recomendado):
 
-2. **Crie e ative um ambiente virtual** (recomendado):
-   - No Linux/Mac:
-     ```bash
-     python -m venv venv
-     source venv/bin/activate
-     ```
-   - No Windows:
-     ```bash
-     python -m venv venv
-     venv\Scripts\activate
-     ```
+No Linux/Mac:
 
-3. **Instale as dependências**: As bibliotecas necessárias para o funcionamento do projeto são listadas abaixo. Você pode instalá-las usando o `pip`:
+python -m venv venv
+source venv/bin/activate
+No Windows:
 
-   ```bash
-   pip install Flask pandas scikit-learn plotly flask-login flask-sqlalchemy
-   ```
+python -m venv venv
+venv\Scripts\activate
+Instale as dependências: As bibliotecas necessárias para o funcionamento do projeto são listadas abaixo. Você pode instalá-las usando o pip:
+pip install Flask pandas scikit-learn plotly flask-login flask-sqlalchemy
+Bibliotecas necessárias:
 
-   **Bibliotecas necessárias:**
-   - **Flask**: Framework para criação da aplicação web.
-   - **pandas**: Biblioteca para manipulação de dados.
-   - **scikit-learn**: Biblioteca para machine learning, utilizada para o modelo de regressão linear.
-   - **plotly**: Biblioteca para criação de gráficos interativos.
-   - **flask-login**: Para gerenciamento de sessões e autenticação de usuários.
-   - **flask-sqlalchemy**: Para integração com banco de dados SQL.
-
-## Execução
-
+Flask: Framework para criação da aplicação web.
+pandas: Biblioteca para manipulação de dados.
+scikit-learn: Biblioteca para machine learning, utilizada para o modelo de regressão linear.
+plotly: Biblioteca para criação de gráficos interativos.
+flask-login: Para gerenciamento de sessões e autenticação de usuários.
+flask-sqlalchemy: Para integração com banco de dados SQL.
+Execução
 Após instalar as dependências, para iniciar o servidor Flask, execute o seguinte comando no terminal:
 
-```bash
 python app.py
-```
+
 
 O aplicativo estará disponível em http://127.0.0.1:5000/.
 
-## Funcionalidades
+Funcionalidades
 
-- **Previsão de Notas Finais**: Os usuários podem inserir suas notas nas disciplinas "Defesa Contra as Artes das Trevas", "Poções" e "Transfiguração" para prever sua nota final.
-- **Gráficos Interativos**: Visualize as médias das notas por casa em gráficos de barras interativos.
+Previsão de Notas Finais: Os usuários podem inserir suas notas nas disciplinas "Defesa Contra as Artes das Trevas", "Poções" e "Transfiguração" para prever sua nota final.
 
-## Contribuição
+Gráficos Interativos: Visualize as médias das notas por casa em gráficos de barras interativos.
 
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests.
-
-## Licença
-
-Este projeto é de código aberto e pode ser usado livremente. Por favor, verifique o arquivo LICENSE para mais detalhes.
+Estatísticas de Quadribol: Uma nova página com gráficos e estatísticas detalhadas sobre o campeonato de Quadribol, incluindo:
+Média de pontos por casa.
+Desempenho dos jogadores nas partidas.
+Pontuação total por casa e contagem de vitórias dos times.

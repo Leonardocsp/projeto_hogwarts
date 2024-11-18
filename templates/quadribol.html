@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block title %}Estatísticas de Quadribol{% endblock %}
+
+{% block body_class %}quadribol-page{% endblock %}
+
+{% block content %}
+<h2>⚡ Estatísticas do Quadribol ⚡</h2>
+
+<div class="estatisticas quadro">
+    <h3>Média de Desempenho por Casa</h3>
+    <div>{{ graph_html|safe }}</div>
+</div>
+
+<div class="detalhes quadro">
+    <h3>Jogadores em Destaque</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Casa</th>
+                <th>Posição</th>
+                <th>Partidas Jogadas</th>
+                <th>Pontos Marcados</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for jogador in jogadores %}
+            <tr>
+                <td>{{ jogador['Nome'] }}</td>
+                <td>{{ jogador['Casa'] }}</td>
+                <td>{{ jogador['Posicao'] }}</td>
+                <td>{{ jogador['PartidasJogadas'] }}</td>
+                <td>{{ jogador['PontosMarcados'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<div class="grafico-desempenho quadro">
+    <h3>Desempenho nas Partidas</h3>
+    <div>{{ scatter_html|safe }}</div>
+</div>
+
+<div class="pontuacao quadro">
+    <h3>Pontuação Total por Casa</h3>
+    <div>{{ pontuacao_html|safe }}</div>
+</div>
+
+<div class="vitorias quadro">
+    <h3>Vitórias por Time</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Casa</th>
+                <th>Vitórias</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for time in vitorias %}
+            <tr>
+                <td>{{ time['Time'] }}</td>
+                <td>{{ time['Casa'] }}</td>
+                <td>{{ time['Vitorias'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<div class="estatisticas-gerais quadro">
+    <h3>Estatísticas Gerais do Campeonato</h3>
+    <ul>
+        <li>Total de Partidas: {{ total_partidas }}</li>
+        <li>Total de Pontos: {{ total_pontos }}</li>
+        <li>Média de Pontos por Partida: {{ media_pontos }}</li>
+    </ul>
+</div>
+{% endblock %}
